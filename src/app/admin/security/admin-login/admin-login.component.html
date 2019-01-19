@@ -1,0 +1,25 @@
+
+
+<form action="" [formGroup]="form" (ngSubmit)="submit()"> 
+
+<div class="security-div">
+    LOGOWANIE {{id_user}} {{token}}
+  <div>
+      <input type="text" class="security-input" formControlName="username"  pattern="[a-zA-Z0-9]*" #username
+      placeholder="login"
+      [class.error]="!form.controls['username'].valid && form.controls['username'].touched">
+
+      <input type="password" class="security-input" formControlName="password"  #password
+      placeholder="hasło"
+      [class.error]="!form.controls['password'].valid && form.controls['password'].touched">
+  </div>
+  <div>
+      <button (click)="login(username.value,password.value)"  class="submit-btn" 
+          [disabled]="!form.valid" >Zaloguj się</button>
+  </div>
+
+  {{message}}
+</div>
+
+</form>
+  

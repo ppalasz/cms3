@@ -1,0 +1,15 @@
+<div class="header-div">
+  <li><a routerLink="/admin/start" >admin</a></li>
+  <li><a routerLink="/admin/sql" >sql</a></li>
+  <li *ngIf="!adminSecurityService.isLogged()"><a routerLink="/admin/login" >login</a></li>
+  <li *ngIf="adminSecurityService.isLogged()" ><a routerLink="/admin/logout" >logout</a></li>
+  <div>
+      isLogged={{adminSecurityService.isLogged()}}
+    minutesLeft={{adminSecurityService.minutesLeft}} 
+    id_user={{adminSecurityService.id_user}} 
+    token={{adminSecurityService.token}}</div>
+  <h3>{{adminSecurityService.userName}}</h3>
+
+</div>
+<router-outlet></router-outlet>
+

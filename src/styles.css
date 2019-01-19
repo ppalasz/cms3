@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+input{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px lightgrey;
+    padding: 2px;
+    margin: 2px;
+    }
